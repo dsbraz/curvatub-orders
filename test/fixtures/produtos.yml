@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fabricante: AMOB
+  nome: MDH35 CN1
+
+two:
+  fabricante: Sahinler
+  nome: HKN 60

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  preco: 70000.00
+  pedido_id: 980190962
+  produto_id: 980190962
+
+two:
+  preco: 23897.99
+  pedido_id: 298486374
+  produto_id: 298486374

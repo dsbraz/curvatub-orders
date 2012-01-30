@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cliente_id: 980190962
+  numero: 123
+  previsao_entrega: 2012-02-28
+  observacao: Ferramenta standart 220V trifasico
+
+two:
+  cliente_id: 298486374
+  numero: 456
+  previsao_entrega: 2012-03-28
+  observacao: 380V trifasico

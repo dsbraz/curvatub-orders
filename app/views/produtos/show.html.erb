@@ -1,0 +1,16 @@
+<h1>Produto</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fabricante:</b>
+  <%= @produto.fabricante %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @produto.nome %>
+</p>
+
+<%= link_to 'Editar', edit_produto_path(@produto) %> |
+<%= link_to 'Voltar', produtos_path %>

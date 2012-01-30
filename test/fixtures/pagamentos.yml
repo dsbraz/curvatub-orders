@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  meio: Deposito
+  valor: 30000.00
+  data_prevista: 2012-01-28
+  evento:
+  pedido_id: 980190962
+
+two:
+  meio: Boleto
+  valor: 40000.00
+  data_prevista:
+  evento: Entrega
+  pedido_id: 980190962

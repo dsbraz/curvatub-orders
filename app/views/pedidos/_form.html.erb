@@ -1,0 +1,33 @@
+<%= form_for(@pedido) do |f| %>
+  <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pedido.errors.count, "erro") %>:</h2>
+
+      <ul>
+      <% @pedido.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cliente_id %><br />
+    <%= f.select :cliente_id, Cliente.all.collect { |c| [c.nome, c.id] }, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :previsao_entrega %><br />
+    <%= f.date_select :previsao_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br />
+    <%= f.text_area :observacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
