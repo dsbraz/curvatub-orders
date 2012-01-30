@@ -11,7 +11,7 @@ class PedidoTest < ActiveSupport::TestCase
     assert !pedido.save
   end
 
-  test "nao deve salvar se soma dos pagamentos for diferente do preco" do
+  test "nao deve salvar se a soma dos pagamentos for diferente do preco" do
     pedido = Pedido.find(980190962)
     pedido.pagamentos << Pagamento.new(:meio => 'Deposito', :valor => 1.00)
     assert !pedido.save
@@ -32,5 +32,4 @@ class PedidoTest < ActiveSupport::TestCase
     pedido = Pedido.find(980190962)
     assert pedido.valor_pagamentos == 70000.00
   end
-
 end

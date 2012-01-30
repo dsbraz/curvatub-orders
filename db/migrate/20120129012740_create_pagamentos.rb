@@ -5,7 +5,7 @@ class CreatePagamentos < ActiveRecord::Migration
       t.float :valor, :null => false
       t.date :data_prevista
       t.string :evento
-      t.integer :pedido_id
+      t.references :pedido
 
       t.timestamps
     end

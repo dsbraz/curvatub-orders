@@ -2,8 +2,8 @@ class CreateItens < ActiveRecord::Migration
   def change
     create_table :itens do |t|
       t.float :preco, :null => false
-      t.integer :pedido_id
-      t.integer :produto_id
+      t.references :pedido
+      t.references :produto
       t.text :observacao
 
       t.timestamps

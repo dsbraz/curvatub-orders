@@ -1,0 +1,18 @@
+<h2>Pagamentos</h2>
+
+<table>
+  <tr>
+    <th>Meio</th>
+    <th>Data Prevista</th>
+    <th>Evento</th>
+    <th>Valor (R$)</th>
+  </tr>
+  <% pagamentos.each do |pagamento| %>
+    <tr>
+      <td><%= pagamento.meio %></td>
+      <td><%= pagamento.data_prevista %></td>
+      <td><%= pagamento.evento %></td>
+      <td><%= pagamento.valor %></td>
+    </tr>
+  <% end %>
+</table>
