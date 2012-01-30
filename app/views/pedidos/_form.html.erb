@@ -27,51 +27,12 @@
     <%= f.label :observacao %><br />
     <%= f.text_area :observacao %>
   </div>
+  <% if !@pedido.new_record? %>
   <div>
-    <h2>Itens</h2>
-    <table>
-      <tr>
-        <th>Fabricante</th>
-        <th>Produto</th>
-        <th>Preco</th>
-        <th>Observacao</th>
-        <th></th>
-      </tr>
-    <% @pedido.itens.each do |item| %>
-      <%= f.fields_for :itens, item do |item_fields| %>
-      <tr>
-        <td><%= item.produto.fabricante %></td>
-        <td><%= item.produto.nome %></td>
-        <td><%= item_fields.text_field :preco %></td>
-        <td><%= item_fields.text_field :observacao %></td>
-        <td>Remover</td>
-      </tr>
-      <% end %>
-    <% end %>
-    </table>
-  </div>
-  <div>
-    <h2>Pagamentos</h2>
-    <table>
-      <tr>
-        <th>Meio</th>
-        <th>Data Prevista</th>
-        <th>Evento</th>
-        <th>Valor (R$)</th>
-        <th></th>
-      </tr>
-      <%= f.fields_for :pagamentos do |pagamento_fields| %>
-        <tr>
-          <td><%= pagamento_fields.text_field :meio %></td>
-          <td><%= pagamento_fields.date_select :data_prevista %></td>
-          <td><%= pagamento_fields.text_field :evento %></td>
-          <td><%= pagamento_fields.text_field :valor %></td>
-          <td>Remover</td>
-        </tr>
-      <% end %>
-    </table>
+    <%= link_to 'Exibir Itens', pedido_itens_path(@pedido) %>
   </div>
   <br />
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

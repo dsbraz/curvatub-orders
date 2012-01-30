@@ -1,0 +1,26 @@
+<h1>Itens do pedido: <%= @pedido.numero %></h1>
+
+<table>
+  <tr>
+    <th>Fabricante</th>
+    <th>Produto</th>
+    <th>Preco</th>
+    <th>Observacao</th>
+  </tr>
+  <% @itens.each do |item| %>
+  <tr>
+    <td><%= item.produto.fabricante %></td>
+    <td><%= item.produto.nome %></td>
+    <td><%= item.preco %></td>
+    <td><%= item.observacao %></td>
+    <td><%= link_to 'Mostrar', pedido_item_path(@pedido, item) %></td>
+    <td><%= link_to 'Editar', edit_pedido_item_path(@pedido, item) %></td>
+    <td><%= link_to 'Remover', pedido_item_path(@pedido, item), :confirm => 'Tem certeza?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo item', new_pedido_item_path(@pedido) %>
+<%= link_to 'Voltar para o pedido', edit_pedido_path(@pedido) %>

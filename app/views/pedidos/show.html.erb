@@ -22,16 +22,88 @@
   <%= @pedido.observacao %>
 </p>
 
+<h2>Cliente</h2>
+
 <p>
-  <%= render :partial => "cliente", :locals => { :cliente => @pedido.cliente } %>
+  <b>Nome:</b>
+  <%= @pedido.cliente.nome %>
 </p>
 
 <p>
-  <%= render :partial => "itens", :locals => { :itens => @pedido.itens } %>
+  <b>Razao Social:</b>
+  <%= @pedido.cliente.razao_social %>
 </p>
 
 <p>
- <%= render :partial => "pagamentos", :locals => { :pagamentos => @pedido.pagamentos } %>
+  <b>CNPJ:</b>
+  <%= @pedido.cliente.cnpj %>
+</p>
+
+<p>
+  <b>Inscricao Estadual:</b>
+  <%= @pedido.cliente.ie %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @pedido.cliente.endereco %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @pedido.cliente.telefone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @pedido.cliente.email %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @pedido.cliente.website %>
+</p>
+
+<h2>Itens</h2>
+
+<p>
+  <table>
+    <tr>
+      <th>Fabricante</th>
+      <th>Produto</th>
+      <th>Preco</th>
+      <th>Observacao</th>
+    </tr>
+    <% @pedido.itens.each do |item| %>
+    <tr>
+      <td><%= item.produto.fabricante %></td>
+      <td><%= item.produto.nome %></td>
+      <td><%= item.preco %></td>
+      <td><%= item.observacao %></td>
+    </tr>
+    <% end %>
+  </table>
+</p>
+
+<h2>Pagamentos</h2>
+
+<p>
+  <table>
+    <tr>
+      <th>Meio</th>
+      <th>Data Prevista</th>
+      <th>Evento</th>
+      <th>Valor (R$)</th>
+    </tr>
+    <% @pedido.pagamentos.each do |pagamento| %>
+    <tr>
+      <td><%= pagamento.meio %></td>
+      <td><%= pagamento.data_prevista %></td>
+      <td><%= pagamento.evento %></td>
+      <td><%= pagamento.valor %></td>
+    </tr>
+    <% end %>
+  </table>
 </p>
 
 <%= link_to 'Editar', edit_pedido_path(@pedido) %> |

@@ -4,7 +4,6 @@ class Pedido < ActiveRecord::Base
   validates :cliente_id, :numero, :previsao_entrega, :presence => true
   validates :numero, :uniqueness => true
   validate :soma_pagamentos_igual_valor_total?
-  accepts_nested_attributes_for :itens, :pagamentos, :allow_destroy => true
 
   def cliente
     Cliente.find(self.cliente_id)

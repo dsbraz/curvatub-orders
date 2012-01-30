@@ -1,0 +1,30 @@
+<%= form_for([@pedido, @item]) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "erro") %>:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :produto_id %><br />
+    <%= f.select :produto_id, Produto.all.collect { |p| [p.fabricante + ' - ' + p.nome, p.id] }, { :include_blank => true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preco %><br />
+    <%= f.text_field :preco %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br />
+    <%= f.text_area :observacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
