@@ -25,14 +25,40 @@
   </div>
   <div class="field">
     <%= f.label :observacao %><br />
-    <%= f.text_area :observacao %>
+    <%= f.text_area :observacao, :rows => 3 %>
   </div>
-  <% if !@pedido.new_record? %>
-  <div>
-    <%= link_to 'Exibir Itens', pedido_itens_path(@pedido) %>
+  <div class="field" class="field">
+    <h2>Itens</h2>
+    <table>
+      <tr>
+        <th>Produto</th>
+        <th>Preco</th>
+        <th>Observacao</th>
+        <th></th>
+      </tr>
+      <%= f.fields_for :itens do |builder| %>
+        <%= render 'item_fields', :f => builder %> 
+      <% end %>
+    </table>
+    <%= link_to_add_fields "Novo item", f, :itens %>
+  </div>
+  <div class="field">
+    <h2>Pagamentos</h2>
+    <table>
+      <tr>
+        <th>Meio</th>
+        <th>Data Prevista</th>
+        <th>Evento</th>
+        <th>Valor (R$)</th>
+        <th></th>
+      </tr>
+      <%= f.fields_for :pagamentos do |builder| %>
+        <%= render 'pagamento_fields', :f => builder %> 
+      <% end %>
+    </table>
+    <%= link_to_add_fields "Novo pagamento", f, :pagamentos %>
   </div>
   <br />
-  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
