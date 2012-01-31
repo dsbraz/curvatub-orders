@@ -27,7 +27,7 @@
     <%= f.label :observacao %><br />
     <%= f.text_area :observacao, :rows => 3 %>
   </div>
-  <div class="field" class="field">
+  <div class="field">
     <h2>Itens</h2>
     <table>
       <tr>
@@ -39,8 +39,10 @@
       <%= f.fields_for :itens do |builder| %>
         <%= render 'item_fields', :f => builder %> 
       <% end %>
+      <tr colspan="4">
+        <td><%= link_to_add_association "Novo item", f, :itens %></td>
+      </tr>
     </table>
-    <%= link_to_add_fields "Novo item", f, :itens %>
   </div>
   <div class="field">
     <h2>Pagamentos</h2>
@@ -55,8 +57,10 @@
       <%= f.fields_for :pagamentos do |builder| %>
         <%= render 'pagamento_fields', :f => builder %> 
       <% end %>
+      <tr colspan="5">
+        <td><%= link_to_add_association "Novo pagamento", f, :pagamentos %></td>
+      </tr>
     </table>
-    <%= link_to_add_fields "Novo pagamento", f, :pagamentos %>
   </div>
   <br />
   <div class="actions">

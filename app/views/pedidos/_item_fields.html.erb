@@ -1,9 +1,9 @@
-<tr class="field">
+<tr class="association">
   <td><%= f.select :produto_id, Produto.all.collect { |p| [p.fabricante + ' - ' + p.nome, p.id] }, { :include_blank => true } %></td>
   <td><%= f.text_field :preco %></td>
   <td><%= f.text_field :observacao %></td>
   <td>
     <%= f.hidden_field :_destroy %>
-    <%= link_to_function "Remover", "remove_fields(this)" %>
+    <%= link_to_function "Remover", "remove_association(this)" %>
   </td>
 </tr>

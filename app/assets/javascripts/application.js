@@ -8,13 +8,13 @@
 //= require jquery_ujs
 //= require_tree .
 
-function remove_fields(link) {
+function remove_association(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".field").hide();
+    $(link).closest(".association").hide();
 }
  
-function add_fields(link, association, content) {
+function add_association(link, association, content) {
     var new_id = new Date().getTime();
     var regexp = new RegExp("new_" + association, "g");
-    $(link).parent().before(content.replace(regexp, new_id));
+    $(link).closest("tr").before(content.replace(regexp, new_id));
 }
