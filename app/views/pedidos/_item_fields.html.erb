@@ -1,5 +1,6 @@
 <tr class="association">
-  <td><%= f.select :produto_id, Produto.all.collect { |p| [p.fabricante + ' - ' + p.nome, p.id] }, { :include_blank => true } %></td>
+  <td><%= f.select :produto_id, Produto.all.collect { |p| [p.fabricante + ' - ' + p.nome, p.id] },
+      { :include_blank => true } %></td>
   <td><%= f.text_field :preco %></td>
   <td><%= f.text_field :observacao %></td>
   <td>

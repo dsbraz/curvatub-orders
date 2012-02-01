@@ -37,7 +37,7 @@
         <th></th>
       </tr>
       <%= f.fields_for :itens do |builder| %>
-        <%= render 'item_fields', :f => builder %> 
+        <%= render 'item_fields', :f => builder %>
       <% end %>
       <tr colspan="4">
         <td><%= link_to_add_association "Novo item", f, :itens %></td>
@@ -55,7 +55,7 @@
         <th></th>
       </tr>
       <%= f.fields_for :pagamentos do |builder| %>
-        <%= render 'pagamento_fields', :f => builder %> 
+        <%= render 'pagamento_fields', :f => builder %>
       <% end %>
       <tr colspan="5">
         <td><%= link_to_add_association "Novo pagamento", f, :pagamentos %></td>
