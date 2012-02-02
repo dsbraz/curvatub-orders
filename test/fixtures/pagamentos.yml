@@ -10,6 +10,6 @@ one:
 two:
   meio: Boleto
   valor: 40000.00
-  data_prevista:
+  data_prevista: 2012-03-28
   evento: Entrega
   pedido_id: 980190962

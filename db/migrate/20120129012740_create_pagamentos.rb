@@ -3,9 +3,9 @@ class CreatePagamentos < ActiveRecord::Migration
     create_table :pagamentos do |t|
       t.string :meio, :null => false
       t.float :valor, :null => false
-      t.date :data_prevista
+      t.date :data_prevista, :null => false
       t.string :evento
-      t.references :pedido
+      t.references :pedido, :null => false
 
       t.timestamps
     end

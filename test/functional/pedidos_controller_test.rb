@@ -17,6 +17,7 @@ class PedidosControllerTest < ActionController::TestCase
   end
 
   test "deve criar pedido" do
+    @pedido.numero = "999"
     assert_difference('Pedido.count') do
       post :create, pedido: @pedido.attributes
     end

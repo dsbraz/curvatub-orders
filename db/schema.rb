@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20120129012740) do
 
   create_table "itens", :force => true do |t|
     t.float    "preco",      :null => false
-    t.integer  "pedido_id"
-    t.integer  "produto_id"
+    t.integer  "pedido_id",  :null => false
+    t.integer  "produto_id", :null => false
     t.text     "observacao"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -25,15 +25,15 @@ ActiveRecord::Schema.define(:version => 20120129012740) do
   create_table "pagamentos", :force => true do |t|
     t.string   "meio",          :null => false
     t.float    "valor",         :null => false
-    t.date     "data_prevista"
+    t.date     "data_prevista", :null => false
     t.string   "evento"
-    t.integer  "pedido_id"
+    t.integer  "pedido_id",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "pedidos", :force => true do |t|
-    t.integer  "cliente_id"
+    t.integer  "cliente_id",       :null => false
     t.string   "numero",           :null => false
     t.date     "previsao_entrega", :null => false
     t.text     "observacao"
