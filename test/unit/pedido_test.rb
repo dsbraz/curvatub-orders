@@ -23,9 +23,19 @@ class PedidoTest < ActiveSupport::TestCase
     assert pedido.cliente == cliente
   end
 
-  test "deve calcular o valor total" do
+  test "o valor deve ser 0.0 se nao hourem itens no pedido" do
+    pedido = Pedido.new(:numero => 999, :previsao_entrega => '2012-02-28')
+    assert pedido.valor == 0.0
+  end
+
+  test "deve calcular o valor total do pedido" do
     pedido = Pedido.find(980190962)
     assert pedido.valor == 70000.00
+  end
+
+  test "o total dos pagamentos deve ser 0.0 se nao houverem pagamentos" do
+    pedido = Pedido.new(:numero => 999, :previsao_entrega => '2012-02-28')
+    assert pedido.valor_pagamentos == 0.0
   end
 
   test "deve calcular o valor total dos pagamentos" do
