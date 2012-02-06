@@ -3,13 +3,15 @@ $bg-color: #FAFAFA;
 body {
   background-color: #FFFFFF;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font: {
+    family: verdana, arial, helvetica, sans-serif;
+    size: 13px; }
   line-height: 18px; }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font: {
+    family: verdana, arial, helvetica, sans-serif;
+    size: 13px; }
   line-height: 18px; }
 
 pre {
@@ -33,24 +35,28 @@ div.menu {
   background-color: $bg-color;
   width: 70%;
   font-size: 14px;
-  padding-top: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 5px;
+  padding: {
+    top: 5px;
+    left: 25px;
+    right: 25px;
+    bottom: 5px; }
   border: 1px solid black;
-  margin-left:auto;
-  margin-right:auto; }
+  margin: {
+  left:auto;
+  right:auto; } }
 
 div.content {
   background-color: $bg-color;
   width: 70%;
-  padding-top: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 25px;
+  padding: {
+    top: 5px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px; }
   border: 1px solid black;
-  margin-left:auto;
-  margin-right:auto; }
+  margin: {
+    left:auto;
+    right:auto; } }
 
 table {
   padding: 2px; }
@@ -58,8 +64,9 @@ table {
 th {
   background-color: #E0E0E0;
   text-align: center;
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding: {
+    left: 5px;
+    right: 5px; } }
 
 th.action {
   background-color: $bg-color; }
@@ -69,7 +76,8 @@ th.action {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #f0f0f0;
+  border: 2px solid red;
   display: table; }
 
 #error_explanation {

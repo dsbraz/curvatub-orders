@@ -25,6 +25,8 @@ class PedidosController < ApplicationController
   # GET /pedidos/new.json
   def new
     @pedido = Pedido.new
+    @pedido.itens.build
+    @pedido.pagamentos.build
 
     respond_to do |format|
       format.html # new.html.erb
