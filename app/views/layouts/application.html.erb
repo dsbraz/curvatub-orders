@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<p>
+  <div class="menu">
+    <%= link_to 'Produtos', produtos_path %> |
+    <%= link_to 'Pedidos', pedidos_path %>
+  </div>
+</p>
+<p>
+  <div class="content">
+   <%= yield %>
+  </div>
+</p>
 </body>
 </html>

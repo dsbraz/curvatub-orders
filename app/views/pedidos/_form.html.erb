@@ -32,9 +32,9 @@
     <table>
       <tr>
         <th>Produto</th>
-        <th>Preco</th>
+        <th>Preco (R$)</th>
         <th>Observacao</th>
-        <th></th>
+        <th class="action"></th>
       </tr>
       <%= f.fields_for :itens do |builder| %>
         <%= render 'item_fields', :f => builder %>
@@ -52,7 +52,7 @@
         <th>Data Prevista</th>
         <th>Evento</th>
         <th>Valor (R$)</th>
-        <th></th>
+        <th class="action"></th>
       </tr>
       <%= f.fields_for :pagamentos do |builder| %>
         <%= render 'pagamento_fields', :f => builder %>
