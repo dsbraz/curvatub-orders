@@ -46,7 +46,7 @@ class PedidosController < ApplicationController
 
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
+        format.html { redirect_to @pedido, notice: 'Pedido criado com sucesso.' }
         format.json { render json: @pedido, status: :created, location: @pedido }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class PedidosController < ApplicationController
 
     respond_to do |format|
       if @pedido.update_attributes(params[:pedido])
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
+        format.html { redirect_to @pedido, notice: 'Pedido alterado com sucesso.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -81,5 +81,11 @@ class PedidosController < ApplicationController
       format.html { redirect_to pedidos_url }
       format.json { head :ok }
     end
+  end
+
+  # GET /pedidos/1/print
+  def print
+    @pedido = Pedido.find(params[:id])
+    render :layout => false
   end
 end

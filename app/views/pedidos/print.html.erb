@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Orders</title>
+  <style>
+    body, input {
+      font-family: verdana, arial, helvetica, sans-serif;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 0px 10px 0px 10px;
+    }
+  </style>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>Pedido <%= @pedido.numero %></h1>
+
+  <p>
+    <b>Data:</b>
+    <%= @pedido.created_at.to_formatted_s(:db) %>
+    <b>Previsao de Entrega:</b>
+    <%= @pedido.previsao_entrega %>
+  </p>
+
+  <p>
+    <fieldset>
+      <legend>Cliente</legend>
+      <table>
+        <tr>
+          <td><b>Nome:</b></td>
+          <td><%= @pedido.cliente.nome %></td>
+          <td><b>R. Social:</b></td>
+          <td><%= @pedido.cliente.razao_social %></td>
+        </tr>
+        <tr>
+          <td><b>CNPJ:</b></td>
+          <td><%= @pedido.cliente.cnpj %></td>
+          <td><b>IE:</b></td>
+          <td><%= @pedido.cliente.ie %></td>
+        </tr>
+        <tr>
+          <td><b>Endereco:</b></td>
+          <td><%= @pedido.cliente.endereco %></td>
+          <td><b>Telefone:</b></td>
+          <td><%= @pedido.cliente.telefone %></td>
+        </tr>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><%= @pedido.cliente.email %></td>
+          <td><b>Website:</b></td>
+          <td><%= @pedido.cliente.website %></td>
+        </tr>
+      </table>
+    </fieldset>
+  </p>
+
+  <p>
+    <fieldset>
+      <legend>Itens</legend>
+      <table>
+        <tr>
+          <th>Fabricante</th>
+          <th>Produto</th>
+          <th>Preco</th>
+          <th>Observacao</th>
+        </tr>
+        <% @pedido.itens.each do |item| %>
+        <tr>
+          <td><%= item.produto.fabricante %></td>
+          <td><%= item.produto.nome %></td>
+          <td><%= item.preco %></td>
+          <td><%= item.observacao %></td>
+        </tr>
+        <% end %>
+      </table>
+    </fieldset>
+  </p>
+
+  <p>
+    <fieldset>
+      <legend>Pagamentos</legend>
+      <table>
+        <tr>
+          <th>Meio</th>
+          <th>Data Prevista</th>
+          <th>Evento</th>
+          <th>Valor (R$)</th>
+        </tr>
+        <% @pedido.pagamentos.each do |pagamento| %>
+        <tr>
+          <td><%= pagamento.meio %></td>
+          <td><%= pagamento.data_prevista %></td>
+          <td><%= pagamento.evento %></td>
+          <td><%= pagamento.valor %></td>
+        </tr>
+        <% end %>
+      </table>
+    </fieldset>
+  </p>
+
+  <p>
+    <b>TOTAL:</b>
+    R$ <%= @pedido.valor %>
+  </p>
+
+  <p>
+    <b>Informacoes para deposito:</b><br />
+    Favorecido: <input type="text" size=70 style="border:none;" value="Curvatub Comercio e Importacao de Maquinas Ltda"><br />
+    Banco: <input type="text" size=4 style="border:none;">
+    Agencia: <input type="text" size=6 style="border:none;">
+    Conta Corrente: <input type="text" size=15 style="border:none;"><br />
+  </p>
+
+  <p>
+    <b>Observacao:</b>
+    <%= @pedido.observacao %>
+  </p>
+
+  <br /><br /><br />
+
+  <p>
+    <table width="100%">
+      <tr>
+        <td>___________________________________</td>
+        <td style="text-align:right;">___________________________________</td>
+      </tr>
+      <tr>
+        <td>
+          <%= @pedido.cliente.nome %><br />
+          <%= @pedido.cliente.cnpj %>
+        </td>
+        <td style="text-align:right;">
+          <input type="text" size=26 style="border:none;text-align:right;" value="Curvatub Com. e Imp. de Maquinas"><br />
+          <input týpe="text" size=19 style="border:none;text-align:right;" value="10.548.995/0002-64">
+        </td>
+    </table>
+  </p>
+
+  <br /><br /><br />
+
+  <p style="border-top:1px solid">
+    <input type="text" style="border:none;" size=100 value="Curvatub Comercio e Importacao de Maquinas Ltda"><br />
+    <input type="text" style="border:none;" size=100 value="Av. Santa Catarina, 2970 - Vila Mascote"><br />
+    <input type="text" style="border:none;" size=100 value="Sao Paulo / SP / Brasil"><br />
+    <input type="text" style="border:none;" size=100 value="+55 (11) 5565-7855"><br />
+    <input type="text" style="border:none;" size=100 value="http://www.curvatub.com.br">
+  </p>
+</body>
+</html>
