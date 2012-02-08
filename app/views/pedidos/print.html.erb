@@ -10,6 +10,9 @@
     th, td {
       padding: 0px 10px 0px 10px;
     }
+    input {
+      border: none;
+    }
   </style>
   <%= csrf_meta_tags %>
 </head>
@@ -106,10 +109,10 @@
 
   <p>
     <b>Informacoes para deposito:</b><br />
-    Favorecido: <input type="text" size=70 style="border:none;" value="Curvatub Comercio e Importacao de Maquinas Ltda"><br />
-    Banco: <input type="text" size=4 style="border:none;">
-    Agencia: <input type="text" size=6 style="border:none;">
-    Conta Corrente: <input type="text" size=15 style="border:none;"><br />
+    Favorecido: <input type="text" size=70 value="Curvatub Comercio e Importacao de Maquinas Ltda"><br />
+    Banco: <input type="text" size=4>
+    Agencia: <input type="text" size=6>
+    Conta Corrente: <input type="text" size=15><br />
   </p>
 
   <p>
@@ -131,8 +134,8 @@
           <%= @pedido.cliente.cnpj %>
         </td>
         <td style="text-align:right;">
-          <input type="text" size=26 style="border:none;text-align:right;" value="Curvatub Com. e Imp. de Maquinas"><br />
-          <input týpe="text" size=19 style="border:none;text-align:right;" value="10.548.995/0002-64">
+          <input type="text" size=26 style="text-align:right;" value="Curvatub Com. e Imp. de Maquinas"><br />
+          <input týpe="text" size=19 style="text-align:right;" value="10.548.995/0002-64">
         </td>
     </table>
   </p>
@@ -140,11 +143,11 @@
   <br /><br /><br />
 
   <p style="border-top:1px solid">
-    <input type="text" style="border:none;" size=100 value="Curvatub Comercio e Importacao de Maquinas Ltda"><br />
-    <input type="text" style="border:none;" size=100 value="Av. Santa Catarina, 2970 - Vila Mascote"><br />
-    <input type="text" style="border:none;" size=100 value="Sao Paulo / SP / Brasil"><br />
-    <input type="text" style="border:none;" size=100 value="+55 (11) 5565-7855"><br />
-    <input type="text" style="border:none;" size=100 value="http://www.curvatub.com.br">
+    <input type="text" size=100 value="Curvatub Comercio e Importacao de Maquinas Ltda"><br />
+    <input type="text" size=100 value="Av. Santa Catarina, 2970 - Vila Mascote"><br />
+    <input type="text" size=100 value="Sao Paulo / SP / Brasil"><br />
+    <input type="text" size=100 value="+55 (11) 5565-7855"><br />
+    <input type="text" size=100 value="http://www.curvatub.com.br">
   </p>
 </body>
 </html>
