@@ -4,6 +4,7 @@
   <tr class="header">
     <th>Cliente</th>
     <th>Numero</th>
+    <th>Vendedor</th>
     <th>Prev. de Entrega</th>
     <th>Valor (R$)</th>
     <th class="action"></th>
@@ -15,6 +16,7 @@
   <tr>
     <td><%= pedido.cliente.nome %></td>
     <td><%= pedido.numero %></td>
+    <td><%= pedido.vendedor %></td>
     <td><%= pedido.previsao_entrega %></td>
     <td><%= pedido.valor %></td>
     <td><%= link_to 'Mostrar', pedido %></td>

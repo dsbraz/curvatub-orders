@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120129012740) do
     t.integer  "cliente_id",       :null => false
     t.string   "numero",           :null => false
     t.date     "previsao_entrega", :null => false
+    t.string   "vendedor"
     t.text     "observacao"
     t.datetime "created_at"
     t.datetime "updated_at"
