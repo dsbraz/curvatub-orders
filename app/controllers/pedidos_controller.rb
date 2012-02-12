@@ -1,4 +1,6 @@
 class PedidosController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /pedidos
   # GET /pedidos.json
   def index

@@ -31,6 +31,18 @@ div {
   &.field, &.actions {
     margin-bottom: 10px; } }
 
+div.header {
+  width: 73%;
+  color: #fff;
+  font-size: 12px;
+  text-align: right;
+  margin: {
+    left: auto;
+    right: auto; } 
+  a {
+    color: #fff;
+    text-decoration: none; }}
+
 div.menu {
   background-color: $bg-color;
   width: 70%;

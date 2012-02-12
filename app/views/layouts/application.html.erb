@@ -8,6 +8,10 @@
 </head>
 <body>
 <p>
+  <div class="header">
+    <%= "Ola, #{current_user.email}!" unless not user_signed_in? %>
+    <%= link_to('[Sair]', destroy_user_session_path, :method => :delete) if user_signed_in? %>
+  </div>
   <div class="menu">
     <%= link_to 'Produtos', produtos_path %> |
     <%= link_to 'Pedidos', pedidos_path %>

@@ -1,4 +1,6 @@
 Orders::Application.routes.draw do
+  devise_for :users
+
   resources :pedidos do
     member do
       get 'print'
@@ -6,4 +8,6 @@ Orders::Application.routes.draw do
   end
 
   resources :produtos
+
+  root :to => 'pedidos#index'
 end
