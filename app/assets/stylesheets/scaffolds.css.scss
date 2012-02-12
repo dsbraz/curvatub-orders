@@ -72,6 +72,11 @@ th {
 th.action {
   background-color: $bg-color; }
 
+td {
+  padding: {
+    left: 2px;
+    right: 2px; } }
+
 #notice {
   color: green; }
 
