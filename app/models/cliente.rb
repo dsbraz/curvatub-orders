@@ -1,3 +1,3 @@
 class Cliente < ActiveResource::Base
-  self.site = "http://localhost:8080"
+  self.site = "http://sugarcrmapi.curvatub.com.br"
 end
