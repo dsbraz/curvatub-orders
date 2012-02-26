@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20120212151513) do
   end
 
   create_table "pedidos", :force => true do |t|
-    t.integer  "cliente_id",       :null => false
+    t.string   "cliente_id",       :null => false
     t.string   "numero",           :null => false
     t.date     "previsao_entrega", :null => false
     t.string   "vendedor"

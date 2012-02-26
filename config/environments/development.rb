@@ -34,7 +34,7 @@ Orders::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'curvatub.com.br',
-    :user_name            => 'dsbraz@gmail.com',
+    :user_name            => 'curvatub@curvatub.com.br',
     :password             => '',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
